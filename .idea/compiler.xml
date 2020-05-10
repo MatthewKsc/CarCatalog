@@ -8,15 +8,18 @@
         <outputRelativeToContentRoot value="true" />
         <module name="service-registration" />
         <module name="car-service" />
+        <module name="car-rating" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="car-rating" target="1.8" />
       <module name="car-service" target="1.8" />
       <module name="service-registration" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="car-rating" options="-parameters" />
       <module name="car-service" options="-parameters" />
       <module name="service-registration" options="-parameters" />
     </option>
