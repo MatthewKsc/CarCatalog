@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/car-catalog-main/car-catalog-main.iml" filepath="$PROJECT_DIR$/car-catalog-main/car-catalog-main.iml" />
       <module fileurl="file://$PROJECT_DIR$/car-details/car-details.iml" filepath="$PROJECT_DIR$/car-details/car-details.iml" />
       <module fileurl="file://$PROJECT_DIR$/car-rating/car-rating.iml" filepath="$PROJECT_DIR$/car-rating/car-rating.iml" />
       <module fileurl="file://$PROJECT_DIR$/car-service/car-service.iml" filepath="$PROJECT_DIR$/car-service/car-service.iml" />
