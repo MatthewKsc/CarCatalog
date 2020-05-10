@@ -1,1 +1,6 @@
-
+server:
+  port: 8761 #default eureka service port
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false #avoid errors causing of one instance of eureka service
