@@ -7,19 +7,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class CarRating {
 
     @Id
-    private String id;
     private String carId;
     private int rating;
 
     public CarRating() {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getCarId() {
