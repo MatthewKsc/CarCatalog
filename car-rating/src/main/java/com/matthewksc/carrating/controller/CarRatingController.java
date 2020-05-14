@@ -1,7 +1,7 @@
-package com.matthewksc.carrating.controllers;
+package com.matthewksc.carrating.controller;
 
 import com.matthewksc.carrating.dao.CarRating;
-import com.matthewksc.carrating.services.RatingService;
+import com.matthewksc.carrating.services.CarRatingService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,21 +11,21 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/rating")
-public class RatingController {
+public class CarRatingController {
 
-    private RatingService ratingService;
+    private CarRatingService carRatingService;
 
-    public RatingController(RatingService ratingService) {
-        this.ratingService = ratingService;
+    public CarRatingController(CarRatingService carRatingService) {
+        this.carRatingService = carRatingService;
     }
 
     @GetMapping()
     public Flux<CarRating> getRatings(){
-        return ratingService.findAll();
+        return carRatingService.findAll();
     }
 
     @GetMapping("/{carId}")
     public Mono<CarRating> getCarRating(@PathVariable String carId){
-        return ratingService.getRatingOfCar(carId);
+        return carRatingService.getRatingOfCar(carId);
     }
 }

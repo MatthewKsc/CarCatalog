@@ -1,6 +1,6 @@
 package com.matthewksc.carservice;
 
-import com.matthewksc.carservice.dao.entity.Car;
+import com.matthewksc.carservice.dao.Car;
 import com.matthewksc.carservice.services.CarService;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
@@ -18,13 +18,13 @@ public class init {
 
     @EventListener(ApplicationReadyEvent.class)
     public void get(){
-        Car mazda= new Car();
-        mazda.setId("mazda");
-        mazda.setName("Mazda");
+        Car rex= new Car();
+        rex.setId("rx-8");
+        rex.setName("RX-8");
         Car scirocco = new Car();
         scirocco.setId("scirocco");
         scirocco.setName("Scirocco");
-        Flux<Car> cars = Flux.just(mazda, scirocco);
+        Flux<Car> cars = Flux.just(rex, scirocco);
         carService.insertMany(cars.toIterable()).subscribe();
     }
 }

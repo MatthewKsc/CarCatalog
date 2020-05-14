@@ -1,4 +1,4 @@
-package com.matthewksc.carservice.dao.entity;
+package com.matthewksc.carservice.dao;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

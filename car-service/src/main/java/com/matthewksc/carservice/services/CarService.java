@@ -1,7 +1,7 @@
 package com.matthewksc.carservice.services;
 
 import com.matthewksc.carservice.dao.CarRepository;
-import com.matthewksc.carservice.dao.entity.Car;
+import com.matthewksc.carservice.dao.Car;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
