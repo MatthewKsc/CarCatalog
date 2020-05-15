@@ -2,6 +2,7 @@ package com.matthewksc.carcatalogmain.dao.enityty;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import reactor.core.publisher.Mono;
 
 @Document
 public class CatalogItem {
@@ -14,14 +15,11 @@ public class CatalogItem {
     private String description;
     private String YearOfProductions;
     private String power;
-    private int rating;
+    private Integer rating;
 
-    public CatalogItem() {
-    }
 
-    public CatalogItem(String id, String carId, String name, String mark, String description,
-                       String yearOfProductions, String power, int rating) {
-        this.id = id;
+    public CatalogItem(String carId, String name, String mark,
+                       String description, String yearOfProductions, String power, Integer rating) {
         this.carId = carId;
         this.name = name;
         this.mark = mark;
@@ -29,6 +27,14 @@ public class CatalogItem {
         YearOfProductions = yearOfProductions;
         this.power = power;
         this.rating = rating;
+    }
+
+    public CatalogItem() {
+    }
+
+    public CatalogItem(String carId, String name) {
+        this.carId = carId;
+        this.name = name;
     }
 
     public String getId() {
@@ -87,11 +93,11 @@ public class CatalogItem {
         this.power = power;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
     }
 }

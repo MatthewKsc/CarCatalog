@@ -8,7 +8,7 @@ public class CarRating {
 
     @Id
     private String carId;
-    private int rating;
+    private Integer rating;
 
     public CarRating() {
     }
@@ -21,11 +21,11 @@ public class CarRating {
         this.carId = carId;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
     }
 }

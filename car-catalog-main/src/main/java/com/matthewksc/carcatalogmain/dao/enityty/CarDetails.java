@@ -61,6 +61,6 @@ public class CarDetails {
     }
 
     public void setPower(String power) {
-        this.power = power +" km";
+        this.power = power;
     }
 }
