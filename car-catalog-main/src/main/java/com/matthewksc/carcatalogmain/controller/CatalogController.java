@@ -1,7 +1,5 @@
 package com.matthewksc.carcatalogmain.controller;
 
-
-import com.matthewksc.carcatalogmain.dao.CatalogItemRepository;
 import com.matthewksc.carcatalogmain.dao.enityty.Car;
 import com.matthewksc.carcatalogmain.dao.enityty.CarDetails;
 import com.matthewksc.carcatalogmain.dao.enityty.CarRating;
@@ -18,7 +16,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/catalog")
 public class CatalogController {
 
-    @GetMapping()
+    @GetMapping
     public List<CatalogItem> CatalogController(){
          List<Car> cars = WebClient
                  .builder()
