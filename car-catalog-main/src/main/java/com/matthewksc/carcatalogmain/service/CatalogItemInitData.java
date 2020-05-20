@@ -15,9 +15,12 @@ import java.util.stream.Collectors;
 @Service
 public class CatalogItemInitData {
 
+
+    private WebClient.Builder webClientBuilder;
     private CatalogItemService catalogItemService;
 
-    public CatalogItemInitData(CatalogItemService catalogItemService) {
+    public CatalogItemInitData(WebClient.Builder webClientBuilder, CatalogItemService catalogItemService) {
+        this.webClientBuilder = webClientBuilder;
         this.catalogItemService = catalogItemService;
     }
 
@@ -40,11 +43,10 @@ public class CatalogItemInitData {
     }
 
     private List<Car> getCars() {
-        return WebClient
-                .builder()
-                .build()
+
+        return webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8083/cars", Car.class)
+                .uri("http://car-serice/cars", Car.class)
                 .retrieve()
                 .bodyToFlux(Car.class)
                 .collectList()
@@ -52,22 +54,18 @@ public class CatalogItemInitData {
     }
 
     private CarRating getRatingOfCar(String carId) {
-        return WebClient
-                .builder()
-                .build()
+        return webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8082/rating/"+ carId, CarRating.class)
+                .uri("http://car-rating/rating/"+ carId, CarRating.class)
                 .retrieve()
                 .bodyToMono(CarRating.class)
                 .block();
     }
 
     private CarDetails getDetailsForCar(String carId) {
-        return WebClient
-                .builder()
-                .build()
+        return webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8081/details/"+carId, CarDetails.class)
+                .uri("http://car-details/details/"+carId, CarDetails.class)
                 .retrieve()
                 .bodyToMono(CarDetails.class)
                 .block();
